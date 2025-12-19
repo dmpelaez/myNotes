@@ -218,7 +218,7 @@ body {
 
 .delete-confirm.active {
   position: absolute;
-  left: 40%;
+  left: 30%;
   top: 20%;
   display: flex;
   background: rgb(59, 58, 58);
