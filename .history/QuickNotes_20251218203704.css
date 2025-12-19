@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+* {
+  color: rgb(255, 255, 255);
+}
+.aside-section {
+  border: 1px solid white;
+  display: grid;
+  width: 300px;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  grid-template-rows: 40px 30px 1fr 20px;
+}
+
+.input {
+  color: black;
+
+}
+.add-button {
+  width: 100px;
+  display: flex;
+}

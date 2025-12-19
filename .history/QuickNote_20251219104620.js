@@ -1,0 +1,93 @@
+//Aside section
+const input = document.querySelector('.input');
+const noteList = document.querySelector('.note-list');
+const addBtn = document.querySelector('.add-button');
+
+//Main section 
+const titleNotes = document.querySelector('.title-notes');
+const pinBtn = document.querySelector('.pin-btn');
+const textArea = document.querySelector('.textarea');
+
+//delete button section
+const btnDelete = document.querySelector('.delete-btn');
+const edit = document.querySelector('.edit');
+
+//delete confirm
+const deleteConfirm = document.querySelector('.delete-confirm');
+
+//remove and cancel button
+const cancelBtn = document.querySelector('.cancel-btn');
+const removeBtn = document.querySelector('.remove-btn');
+
+
+//save notes
+
+let notes = JSON.parse(localStorage.getItem('notes') || "[]");
+let currentId = null;
+
+//save storage
+function saveNotes() {
+  localStorage.setItem('notes', JSON.stringify(notes));
+}
+
+
+function addNote() {
+  const newNotes = {
+    id: Date.now(),
+    title: "",
+    content: "",
+    date: new Date().toLocaleString(),
+    pinned: false
+  };
+  notes.unshift(newNotes);
+  currentId = newNotes.id;
+  saveNotes();
+  console.log('working')
+}
+
+function renderNotes() {
+  const query = input.value;
+  noteList.value = '';
+
+  const pinned = notes.filter(n => n.pinned);
+  const others = notes.filter(n => !n.pinned);
+
+  const filtered = [...pinned, ...others].filter(n => {
+    n.title.toLowerCase().includes(query) || n.content.toLowerCase().includes(query)
+  });
+
+
+  for (let note of filtered) {
+    const div = document.createElement("div");
+    div.className = "note-item" + (note.pinned ? " active" : "");
+    div.onclick = selectNote(note.id);
+    div.innerHTML = `
+    <h1>${note.title}</h1>
+    <small>${note.date}</small>
+    ${note.pinned ? '<span class="icon-pin">📌</span>' : ''}
+    `;
+    noteList.appendChild(div);
+  };
+  saveNotes();
+  console.log('working')
+}
+
+
+function selectNote(id){
+  const note = notes.find(note => note.id === currentId);
+  if (!note);
+  currentId = null;
+  console.log(note.id);
+}
+
+function showModal() {
+  deleteConfirm.classList.add("active");
+}
+
+function cancelModal() {
+  deleteConfirm.classList.remove("active");
+}
+
+
+
+renderNotes();

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+  <html>
+
+    <head>
+
+      <title>Quick Notes</title>
+
+      <!--CSS LINK-->
+      <link rel="stylesheet" href="QuickNotes.css">
+    </head>
+    <body>
+
+      <!--Note section-->
+      <aside class="aside-section">
+
+        <!--My notes part-->
+        <div class="myNotes">
+          <p class="my-notes-text">My Notes</p>
+        </div>
+        <!--Search notes-->
+        <div class="input-box">
+          <input class="input" placeholder="Search notes...">
+        </div>
+        <!--Notes-->
+        <div class="note-list"></div>
+        <!--add button-->
+        <button class="add-button">New note</button>
+
+      </aside>
+
+      <!---Typing section-->
+      <main class="main-section">
+
+        <!--Header-->
+        <div class="header-section">
+          <h1>Title:</h1>
+          <input class="title-notes" placeholder="Untitled Note">
+          <button class="pin-btn">Pin</button>
+        </div>
+        
+        <!--text area-->
+        <div class="texting-area">
+          <textarea class="textarea" placeholder="Start typing..."></textarea>
+        </div>
+
+        <!---Delete button-->
+        <div class="delete">
+          <span class="edit">Last edit: -</span>
+          <button class="delete-btn">Delete</button>
+        </div>
+
+        <div class="delete-confirm">
+
+          <div class="modal-delete">
+            <h1>Are you sure?</h1>
+            <p class="sure-text">Are you sure you want to delete the note permanently?</p>
+          </div>
+
+        </div>
+
+      </main>
+
+
+    </body>
+
+  </html>

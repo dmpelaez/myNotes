@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+* {
+  color: rgb(255, 255, 255);
+}
+
+.input {
+  color: black;
+}

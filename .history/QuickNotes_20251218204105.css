@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  box-sizing: border-box;
+}
+* {
+  color: rgb(255, 255, 255);
+}
+.aside-section {
+  border: 1px solid white;
+  display: grid;
+  width: 400px;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  grid-template-rows: 40px 30px 1fr 20px;
+  padding: 10px;
+  gap: 25px;
+  
+}
+.note-list {
+  border: 1px solid white;
+  width: 100%;
+}
+
+.my-notes-text {
+  font-weight: bold;
+  font-size: 29px;
+}
+
+.input {
+  color: black;
+  display: flex;
+  align-self: center;
+}
+.add-button {
+  width: 100px;
+  display: flex;
+  justify-self: center;
+}
