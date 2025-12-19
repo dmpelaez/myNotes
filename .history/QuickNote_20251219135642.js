@@ -204,8 +204,7 @@ function deleteAll() {
  //changes
  currentId = null;
  edit.textContent = 'Last eedited: -';
-textArea.value = '';
-titleNotes.value = '';
+
  renderNotes();
 }
 //display changes
